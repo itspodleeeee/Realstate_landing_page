@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayleaf Builders - Premium Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="https://bayleafbuildersph.com/wp-content/themes/bayleaf/assets/icons/leaf_logo.svg">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#" class="nav-brand">
+            <img src="https://bayleafbuildersph.com/wp-content/themes/bayleaf/assets/icons/leaf_logo.svg" alt="Bayleaf Logo" class="logo">
+        </a>
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#listings" class="nav-link">Listings</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#testimonials" class="nav-link">Testimonials</a>
+            <a href="#services" class="nav-link">Service</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <button id="messagesBtn" class="btn messages-header-btn" style="display:none;"><i class="fas fa-envelope"></i></button>
+            <button id="loginBtn" class="btn">Login</button>
+        </div>
+        <div class="header-search">
+            <div class="search-container">
+                <input type="text" placeholder="Search properties..." class="header-search-input">
+                <div class="search-suggestions"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Dream Home</h1>
+            <p>Premium real estate properties in prime locations</p>
+            <div class="search-box">
+                <div class="search-container">
+                    <input type="text" placeholder="Search properties..." class="hero-search-input">
+                    <div class="search-suggestions"></div>
+                </div>
+                <button class="btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="search-filters">
+                <select class="filter-type">
+                    <option value="">All Types</option>
+                    <option value="Residential Property">Residential</option>
+                    <option value="Commercial Property">Commercial</option>
+                    <option value="Industrial Property">Industrial</option>
+                    <option value="Residential Land">Residential Land</option>
+                    <option value="Industrial Land">Industrial Land</option>
+                    <option value="Mixed-Use Property">Mixed-Use</option>
+                </select>
+                <select class="filter-price">
+                    <option value="">All Prices</option>
+                    <option value="0-10000000">Under ₱10M</option>
+                    <option value="10000000-20000000">₱10M - ₱20M</option>
+                    <option value="20000000-30000000">₱20M - ₱30M</option>
+                    <option value="30000000-40000000">₱30M - ₱40M</option>
+                    <option value="40000000-999999999">Above ₱40M</option>
+                </select>
+                <select class="filter-size">
+                    <option value="">All Sizes</option>
+                    <option value="0-100">Under 100 sqm</option>
+                    <option value="100-200">100-200 sqm</option>
+                    <option value="200-300">200-300 sqm</option>
+                    <option value="300-500">300-500 sqm</option>
+                    <option value="500-999999">Above 500 sqm</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-listings" id="listings">
+        <h2>Featured Properties</h2>
+        <div class="listings-grid">
+            <!-- Listings will be dynamically added here -->
+        </div>
+        <div class="no-results" style="display: none;">
+            <h3>No listings found</h3>
+            <p>Try adjusting your search criteria or check out these suggestions:</p>
+            <div class="suggested-listings"></div>
+        </div>
+        <div class="end-message" style="display: none;">
+            <p>You've reached the end of the listings</p>
+        </div>
+    </section>
+
+    <!-- Become a Property Owner Section -->
+    <section class="become-owner" id="become-owner">
+        <h2>Become a Property Owner</h2>
+        <p class="become-owner-subtitle">Becoming a Bayleaf Property owner is a straightforward and accessible process.</p>
+        <div class="owner-steps">
+            <div class="owner-step">
+                <div class="step-icon"><i class="fas fa-id-card"></i></div>
+                <div class="step-number">1</div>
+                <h3>Verification</h3>
+                <p>Provide at least two (2) valid government-issued IDs to verify your identity.</p>
+            </div>
+            <div class="owner-step">
+                <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+                <div class="step-number">2</div>
+                <h3>Reservation</h3>
+                <p>Secure your desired property by paying its respective reservation fee. Following this, you'll also make a down payment to move forward with your purchase.</p>
+            </div>
+            <div class="owner-step">
+                <div class="step-icon"><i class="fas fa-hard-hat"></i></div>
+                <div class="step-number">3</div>
+                <h3>Construction</h3>
+                <p>Once you've paid a certain amount of your property's total price, you can start constructing your dream house.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="services" id="services">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-card" id="service-dev">
+                <div class="service-bg dev-bg"></div>
+                <div class="service-content">
+                    <h3>Real Estate Development</h3>
+                    <p>Transforming raw land into vibrant, sustainable communities from planning to construction.</p>
+                    <button class="btn service-more" data-service="development">Learn More</button>
+                </div>
+            </div>
+            <div class="service-card" id="service-sales">
+                <div class="service-bg sales-bg"></div>
+                <div class="service-content">
+                    <h3>Sales & Marketing</h3>
+                    <p>Collaborative projects and expert partnerships drive our success in real estate marketing.</p>
+                    <button class="btn service-more" data-service="sales">Learn More</button>
+                </div>
+            </div>
+            <div class="service-card" id="service-invest">
+                <div class="service-bg invest-bg"></div>
+                <div class="service-content">
+                    <h3>Investment Opportunities</h3>
+                    <p>Secure, reputable real estate investment with expert guidance and growth potential.</p>
+                    <button class="btn service-more" data-service="investment">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Modals -->
+    <div id="modal-development" class="modal service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Real Estate Development">
+                <h2 class="modal-title">Real Estate Development</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="service-description">
+                    Transform your vision into reality with our comprehensive real estate development services. We specialize in creating sustainable, innovative, and profitable real estate projects that stand the test of time.
+                </p>
+                <div class="service-features">
+                    <div class="feature-item">
+                        <i class="fas fa-drafting-compass"></i>
+                        <h4>Master Planning</h4>
+                        <p>Strategic development planning and feasibility studies to maximize your investment potential.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-hard-hat"></i>
+                        <h4>Construction Management</h4>
+                        <p>End-to-end project management ensuring quality, timely delivery, and cost efficiency.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Sustainable Design</h4>
+                        <p>Eco-friendly development practices and green building certifications.</p>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <button class="btn service-contact-btn">Start Your Project</button>
+                </div>
+                <div class="service-agent-contact" style="display:none;">
+                    <h3>Contact Our Agent</h3>
+                    <div class="agent-info">
+                        <h4>Bayleaf Agent</h4>
+                        <p>Professional Real Estate Agent</p>
+                        <p><i class="fas fa-phone"></i> +63 2 8123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bayleafbuilders.com</p>
+                    </div>
+                    <button class="btn service-back-btn">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sales" class="modal service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Sales & Marketing">
+                <h2 class="modal-title">Sales & Marketing</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="service-description">
+                    Maximize your property's value with our expert sales and marketing strategies. We combine market insights with innovative marketing techniques to ensure your properties reach the right audience.
+                </p>
+                <div class="service-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Market Analysis</h4>
+                        <p>Comprehensive market research and competitive analysis for optimal pricing.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-bullhorn"></i>
+                        <h4>Digital Marketing</h4>
+                        <p>Strategic online presence and targeted marketing campaigns.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Expert Negotiation</h4>
+                        <p>Skilled negotiation to secure the best deals for your properties.</p>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <button class="btn service-contact-btn">List Your Property</button>
+                </div>
+                <div class="service-agent-contact" style="display:none;">
+                    <h3>Contact Our Agent</h3>
+                    <div class="agent-info">
+                        <h4>Bayleaf Agent</h4>
+                        <p>Professional Real Estate Agent</p>
+                        <p><i class="fas fa-phone"></i> +63 2 8123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bayleafbuilders.com</p>
+                    </div>
+                    <button class="btn service-back-btn">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-investment" class="modal service-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Investment Opportunities">
+                <h2 class="modal-title">Investment Opportunities</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <p class="service-description">
+                    Discover lucrative investment opportunities in prime real estate markets. Our expert team helps you identify and capitalize on high-potential investment properties.
+                </p>
+                <div class="service-features">
+                    <div class="feature-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Investment Analysis</h4>
+                        <p>Detailed ROI analysis and investment strategy development.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h4>Location Research</h4>
+                        <p>In-depth analysis of emerging markets and growth areas.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Risk Management</h4>
+                        <p>Comprehensive risk assessment and mitigation strategies.</p>
+                    </div>
+                </div>
+                <div class="service-cta">
+                    <button class="btn service-contact-btn">Explore Opportunities</button>
+                </div>
+                <div class="service-agent-contact" style="display:none;">
+                    <h3>Contact Our Agent</h3>
+                    <div class="agent-info">
+                        <h4>Bayleaf Agent</h4>
+                        <p>Professional Real Estate Agent</p>
+                        <p><i class="fas fa-phone"></i> +63 2 8123 4567</p>
+                        <p><i class="fas fa-envelope"></i> info@bayleafbuilders.com</p>
+                    </div>
+                    <button class="btn service-back-btn">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="about" id="about">
+        <h2>About Bayleaf Builders</h2>
+        <div class="about-content">
+            <p>Bayleaf Builders is a premier real estate development company committed to creating exceptional living spaces that combine luxury, comfort, and sustainability. With over 15 years of experience in the industry, we have established ourselves as a trusted name in real estate development.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-home"></i>
+                    <h3>Quality Construction</h3>
+                    <p>We use only the finest materials and employ skilled craftsmen to ensure the highest quality in every project.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainable Design</h3>
+                    <p>Our properties are designed with environmental sustainability in mind, incorporating green technologies and eco-friendly practices.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Customer Satisfaction</h3>
+                    <p>We prioritize our clients' needs and ensure complete satisfaction through transparent communication and excellent service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p class="testimonials-subtitle">Trusted by thousands of satisfied property owners and investors</p>
+        </div>
+        <div class="testimonials-container">
+            <div class="testimonials-grid">
+                <div class="testimonial-card active">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Napakaganda ng aming experience sa Bayleaf Builders! Ang ganda ng quality ng construction at napakaprofessional ng team. Perfect ang location para sa aming pamilya."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Maria Santos</h4>
+                            <p>Property Owner, Bayleaf Residences</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Investing in Bayleaf properties was one of the best decisions I've made. The location and amenities are perfect, and the value has increased significantly. Their customer service is outstanding."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>David Wilson</h4>
+                            <p>Property Investor</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Investor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Sobrang satisfied kami sa service ng Bayleaf Builders! From start to finish, very accommodating sila at napakaprofessional. Worth it ang investment namin sa property nila."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Juan Dela Cruz</h4>
+                            <p>Business Owner</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The customer service at Bayleaf Builders is outstanding. They were there for us every step of the way, making our first property purchase smooth and enjoyable. Highly recommended!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Lisa Anderson</h4>
+                            <p>First-time Homebuyer</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Napakaganda ng aming condo unit sa Bayleaf! Ang ganda ng design at napakamodern ng amenities. Sulit na sulit ang investment namin dito."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ana Reyes</h4>
+                            <p>Condo Owner</p>
+                            <span class="verified-badge"><i class="fas fa-check-circle"></i> Verified Buyer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+        <div class="testimonials-stats">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Satisfaction Rate</p>
+            </div>
+            <div class="stat-item">
+                <h3>4.9</h3>
+                <p>Average Rating</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-details">
+                <p><i class="fas fa-map-marker-alt"></i> 123 Bayleaf Avenue, Makati City, Philippines</p>
+                <p><i class="fas fa-phone"></i> +63 2 8123 4567</p>
+                <p><i class="fas fa-envelope"></i> info@bayleafbuilders.com</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bayleaf Builders</h3>
+                <p>Creating exceptional living spaces since 2008</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#listings">Listings</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bayleaf Builders. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="listingModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="listingDetails"></div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="contactDetails"></div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Listing Modal -->
+    <div id="listingFormModal" class="modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close" id="closeListingForm">&times;</span>
+            <h2 id="listingFormTitle">Add Listing</h2>
+            <form id="listingForm">
+                <div class="form-group">
+                    <label for="listingTitle">Title</label>
+                    <input type="text" id="listingTitle" name="title" required />
+                </div>
+                <div class="form-group">
+                    <label for="listingPrice">Price (₱)</label>
+                    <input type="number" id="listingPrice" name="price" min="0" required />
+                </div>
+                <div class="form-group">
+                    <label for="listingLocation">Location</label>
+                    <input type="text" id="listingLocation" name="location" required />
+                </div>
+                <div class="form-group">
+                    <label for="listingSize">Size (sqm)</label>
+                    <input type="number" id="listingSize" name="size" min="1" required />
+                </div>
+                <div class="form-group">
+                    <label for="listingType">Type</label>
+                    <select id="listingType" name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Residential Property">Residential Property</option>
+                        <option value="Commercial Property">Commercial Property</option>
+                        <option value="Residential Land">Residential Land</option>
+                        <option value="Industrial Property">Industrial Property</option>
+                        <option value="Industrial Land">Industrial Land</option>
+                        <option value="Mixed-Use Property">Mixed-Use Property</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="listingDescription">Description</label>
+                    <textarea id="listingDescription" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="listingImages">Images (up to 8)</label>
+                    <button type="button" class="btn upload-btn" id="customUploadBtn"><i class="fas fa-upload"></i> Upload Images</button>
+                    <input type="file" id="listingImages" name="images" accept="image/*" multiple style="display:none;" />
+                    <div id="imagePreview" class="image-preview"></div>
+                </div>
+                <button type="submit" class="btn" id="saveListingBtn">Save Listing</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="messagesModal" class="modal">
+        <div class="modal-content" style="max-width:600px;">
+            <span class="close">&times;</span>
+            <h2>Customer Messages</h2>
+            <div id="messagesContainer"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html> 
